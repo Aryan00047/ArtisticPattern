@@ -7,16 +7,19 @@ public class artPattern {
 		Scanner sc = new Scanner(System.in);
 		int n=sc.nextInt();
 		int rows = (2*n)+1, cols = (2*n)+2;
+		
 		for(int i=0;i<rows ;i++) {
 			int count =0;
 			int u_pat = 2*i,l_pat=2*(2*n-i);
 			for(int j=0;j<cols;j++) {
+				//for first and last row
 				if(i== 0 || i== rows-1) { 
 				   if(j== 0 || j== cols-1)
 					  System.out.print("+ ");
 				   else
 					  System.out.print("- ");
 					  }
+				//for upper pattern
 				else if(i>0 && i<rows/2){
 					    if(j==0)
 						    System.out.print("| ");
@@ -44,6 +47,7 @@ public class artPattern {
 							System.out.print("  ");
 						}
 				}
+				//for middle pattern
 				else if(i== rows/2) {
 					if(j==0)
 						System.out.print("| ");
@@ -60,6 +64,7 @@ public class artPattern {
 							System.out.print("= ");
 					}
 				}
+				//for lower pattern
 				else if(i>rows/2 && i<rows-1) {
 					if(j==0)
 					    System.out.print("| ");
